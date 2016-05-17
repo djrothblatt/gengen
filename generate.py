@@ -10,12 +10,6 @@
 #	-(Long Term) Find some way of visualizing your FSAs
 #	-Condense redundant code/generally refactor
 #	-Add a help message when passed -h
-#TO CONSIDER:
-#	-This machine generates regular grammars. What is its own strong generative capacity?
-#		-At least context-free, I think: You have a sort of stack to keep track of when you're looking at which states do what...
-#		-If this machine is finite-state (which I doubt), then can machines always generate machines of the same SGC?
-#		-If not, is there a fixed SGC that can be used to build machines? Or is it always relatively more powerful?
-#	-How might you create a program that will generate context-free grammars? Context-sensitive? R.e., even?
 from sys import argv 
 
 OUT_FILE = "default.py"
