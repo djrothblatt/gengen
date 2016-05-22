@@ -19,16 +19,17 @@ personal experience that this saves hours of work when testing an
 algorithm that works on regular languages.
 
 Use:  
-     Grammar (\w and \d as in Perl regex character classes):  
-        \<command\> ::= python3 gengen.py (\<output_spec\>? \<expression\>+ | \<expression\>+ \<output_spec\>?)  
-        \<output_spec\> ::= -o \<filename\>  
-        \<filename\> ::= \w+.py  
-        \<expression\> ::= \<state_flag\> \<label\> \<dest\>+  
-        \<state_flag\> ::= -n | -s | -a | -sa  
-        \<label\> ::= \d+  
-        \<dest\> ::= \<label\> \<output_string\>  
-        \<output_string\> ::= \w+  
+     Grammar:    
+          \<command\> ::= python3 gengen.py (\<output_spec\>? \<expression\>+ | \<expression\>+ \<output_spec\>?)  
+          \<output_spec\> ::= -o \<filename\>  
+          \<filename\> ::= \w+.py  
+          \<expression\> ::= \<state_flag\> \<label\> \<dest\>+  
+          \<state_flag\> ::= -n | -s | -a | -sa  
+          \<label\> ::= \d+  
+          \<dest\> ::= \<label\> \<output_string\>  
+          \<output_string\> ::= \w+  
      EX: python3 gengen.py -o foo.py -sa 0 0 a 1 b -n 1 0 b  
+     (\w and \d as in Perl regex character classes)
 
      Semantics:
         state flags:
