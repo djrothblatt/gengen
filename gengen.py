@@ -1,15 +1,4 @@
 #Regular Language Generator
-#created by Daniel J. Rothblatt
-#Purpose: 
-#To create a program that will generate programs which generate strings of a specified regular language
-#Sample code (from command line): python3 generate.py -sa 0 0 a 0 b
-#(Creates language which generates any number of a's and b's)
-
-#TO DO:
-#	-(Long Term) Create a GUI for generation of regular languages (input will be a LOT easier to work with this way)
-#	-(Long Term) Find some way of visualizing your FSAs
-#	-Condense redundant code/generally refactor
-#	-Add a help message when passed -h
 from sys import argv 
 
 OUT_FILE = "default.py"
