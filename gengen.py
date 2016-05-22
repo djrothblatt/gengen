@@ -69,8 +69,8 @@ def p(message): #unexpectedly robust; format codes welcome!
 
 def create_state(transitions, acc = False):
     started = False
-        length = len(transitions)
-        step = 1.0 / length #spreads transitions out evenly
+    length = len(transitions)
+    step = 1.0 / length #spreads transitions out evenly
     threshold = 1.0
     if acc:
         p("\t\t\tif rand() <= ACC_CHANCE:")
