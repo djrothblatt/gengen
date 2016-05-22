@@ -18,7 +18,7 @@ saves hours of work when testing an algorithm that works on regular languages.
 
 Use:  
 	Grammar:    
-		\<command\> ::= python3 gengen.py (\<output_spec\>? \<expression\>+ | \<expression\>+ \<output_spec\>?)  
+		\<command\> ::= python3 gengen.py (\<output_spec\>? \<expression\>+) | (\<expression\>+ \<output_spec\>?)  
 		\<output_spec\> ::= -o \<filename\>  
 		\<filename\> ::= \w+.py  
 		\<expression\> ::= \<state_flag\> \<label\> \<dest\>+  
