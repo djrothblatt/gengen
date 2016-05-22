@@ -28,7 +28,7 @@ Use:
         \<label\> ::= \d+  
         \<dest\> ::= \<label\> \<output_string\>  
         \<output_string\> ::= \w+  
-     EX: python3 generate.py -o foo.py -sa 0 0 a 1 b -n 1 0 b  
+     EX: python3 gengen.py -o foo.py -sa 0 0 a 1 b -n 1 0 b  
 
      Semantics:
         state flags:
