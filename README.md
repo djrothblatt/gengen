@@ -20,6 +20,7 @@ script to generate it. I can attest from personal experience that this
 saves hours of work when testing an algorithm that works on regular languages.
 
 ## Use  
+### Gengen  
 #### Grammar    
 	<command> ::= python3 gengen.py (<output_spec>? <expression>+) | (<expression>+ <output_spec>?)  
 	<output_spec> ::= -o <filename>  
@@ -32,7 +33,7 @@ saves hours of work when testing an algorithm that works on regular languages.
 	EX: python3 gengen.py -o foo.py -sa 0 0 a 1 b -n 1 0 b  
 	(\w and \d as in Perl regex character classes)
 
-### Semantics
+#### Semantics
 	state flags:
 		-n : "normal" state -- neither accepting nor starting  
 	    	-s : "starting" state -- indicates the output script will start in this state  
@@ -46,3 +47,17 @@ saves hours of work when testing an algorithm that works on regular languages.
 		starting/accepting state 0, with transitions to itself print 'a' or to state 1 printing 'b'; AND  
 		a normal state 1 transitioning to 0 printing b  
 		The generated regular language will print any number of 'a's and an even number of 'b's in pairs (i.e., 'bba', never 'bab')
+
+### Generated Scripts
+#### Grammar
+	<command> ::= python3 <filename> <unary_flag>*  
+	<filename> ::= \w+.py  
+	<unary_flag> ::= (-i \d+) | (-t \w+) | (-c <percentage>)
+	<percentage> ::= 1.00 | 0.\d+
+#### Semantics
+	state flags:
+		-i : "iterations" -- followed by a number which indicates the number of strings to be printed
+		-t : "terminal" -- sets the characters to be appended to the end of a string when it is finished
+		-c : "chance" -- sets the chance (as a percentage from 0.00 to 1.00) that a string will end each time the machine enters an accepting state; the lower the chance, the longer the average string will be.
+	A generated script will print to stdout by default, and can be redirected from the command line
+	EX: python3 test.py -i 1000 -t "END" > test_out.txt
